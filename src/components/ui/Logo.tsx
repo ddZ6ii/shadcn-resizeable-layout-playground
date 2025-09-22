@@ -9,7 +9,7 @@ export default function Logo({
 }: LogoProps) {
   return (
     <div className={cn(className)} {...restProps}>
-      <img src="/vite.svg" alt="logo" />
+      <img src={`${import.meta.env.BASE_URL}vite.svg`} alt="logo" />
     </div>
   )
 }

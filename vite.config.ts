@@ -4,15 +4,18 @@ import path from 'path'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@/components': path.resolve(__dirname, './src/components/*'),
-      '@/features/*': path.resolve(__dirname, './src/features/*'),
-      '@/shared/*': path.resolve(__dirname, './src/shared/*'),
-      '@/lib/*': path.resolve(__dirname, './src/lib'),
+export default defineConfig(({ mode }) => {
+  return {
+    base: mode === 'production' ? '/shadcn-resizeable-layout-playground/' : '',
+    plugins: [react(), tailwindcss()],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+        '@/components': path.resolve(__dirname, './src/components/*'),
+        '@/features/*': path.resolve(__dirname, './src/features/*'),
+        '@/shared/*': path.resolve(__dirname, './src/shared/*'),
+        '@/lib/*': path.resolve(__dirname, './src/lib'),
+      },
     },
-  },
+  }
 })

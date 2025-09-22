@@ -7,10 +7,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
       "@/features/*": ["./src/features/*"],
       "@/lib/*": ["./src/lib/*"],
-      "@/shared/*": ["./src/shared/*"],
-      "@/*": ["./src/*"]
+      "@/shared/*": ["./src/shared/*"]
     }
   }
 }
